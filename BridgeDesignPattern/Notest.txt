@@ -1,0 +1,52 @@
+According to GoF bridge design pattern is:
+
+Decouple an abstraction from its implementation so that the two can vary independently
+
+The implementation of bridge design pattern follows the notion to prefer Composition over inheritance.
+
+
+When:
+
+                   ----Shape---
+                  /            \
+         Rectangle              Circle
+        /         \            /      \
+BlueRectangle  RedRectangle BlueCircle RedCircle
+
+Refactor to:
+
+          ----Shape---                        Color
+         /            \                       /   \
+Rectangle(Color)   Circle(Color)           Blue   Red
+
+
+The intent of Bridge and Adapter is different and we need both patterns separately.
+
+Bridge pattern:
+
+It is a structural pattern
+Abstraction and implementation are not bound at compile time
+Abstraction and implementation - both can vary without impact in client
+Uses composition over inheritance.
+Use the Bridge pattern when:
+
+You want run-time binding of the implementation,
+You have a proliferation of classes resulting from a coupled interface and numerous implementations,
+You want to share an implementation among multiple objects,
+You need to map orthogonal class hierarchies.
+@ John Sonmez answer clearly shows effectiveness of bridge pattern in reducing class hierarchy.
+
+You can refer to below documentation link to get better insight into bridge pattern with code example
+
+Adapter pattern:
+
+It allows two unrelated interfaces to work together through the different objects, possibly playing same role.
+It modifies original interface.
+Key differences:
+
+Adapter makes things work after they're designed; Bridge makes them work before they are.
+Bridge is designed up-front to let the abstraction and the implementation vary independently. Adapter is retrofitted to make unrelated classes work together.
+The intent : Adapter allows two unrelated interfaces to work together. Bridge allows Abstraction and implementation to vary independently.
+
+
+//https://www.youtube.com/watch?v=pkY9kX5ly0w
